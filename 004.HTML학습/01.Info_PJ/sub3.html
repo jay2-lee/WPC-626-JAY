@@ -408,6 +408,103 @@
         < 는 &lt; (lt는 less than ~보다작은)
         > 는 &gt; (gt는 greater than ~보다큰)
        -->
+
+      <!-- 테크뉴스 : ul사용! -->
+      <article
+        class="tech-news news-box"
+      >
+        <!-- 제목 -->
+        <h3>테크뉴스</h3>
+        <!-- ul li는 반드시 같이 사용해야함!
+         ul은 순서없는 리스트임(unordered list) -->
+        <ul>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015473464?type=series&cid=1087298"
+              target="_blank"
+            >
+              "깊은 수면, '유레카
+              순간'으로 이어질 가능성
+              높다"
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://n.news.naver.com/mnews/hotissue/article/001/0015470559?type=series&cid=1087298"
+              target="_blank"
+            >
+              제임스웹, 110광년 밖
+              원시행성원반서 준목성급
+              외계행성 포착
+            </a>
+          </li>
+        </ul>
+      </article>
+
+      <!-- 랭킹뉴스 : ol사용 -->
+       <article class="rank-news news-box">
+        <!-- 제목 -->
+         <h3>랭킹뉴스</h3>
+         <!-- ol li는 반드시 같이 사용해야함!
+          ol 순서있는 리스트임(ordered list) -->
+          <ol>
+            <li><a href="https://n.news.naver.com/mnews/article/001/0015505262" target="_blank">안랩 "휴가 떠나기 전 인프라 보안 업데이트하세요"</a></li>
+            <li><a href="https://n.news.naver.com/mnews/article/079/0004044417" target="_blank">카카오내비, AI로 '불편한 길'도 학습한다…SCI 저널 등재</a></li>
+            <li><a href="https://n.news.naver.com/mnews/article/029/0002967757" target="_blank">수소연료전지 성능·내구성 성능 4배 ‘UP’…상온서 촉매 합성</a></li>
+          </ol>
+       </article>
+
+       <!-- 분야별 뉴스 : dl > dt,dd -->
+       <article class="sec-news news-box">
+        <!-- 제목 -->
+         <h3>분야별 뉴스</h3>
+         <!-- dl은 반드시 dt,dd가 나와야함! -->
+          <dl>
+            <!-- 경제파트 -->
+             <dt>경제</dt>
+             <dd>
+              <a href="https://n.news.naver.com/mnews/article/654/0000131227  " target="_blank">억대 수익에도 세금은 나몰라라…유튜버 21명에 89억 부과</a>
+             </dd>
+             <dd>
+              <a href="https://n.news.naver.com/mnews/article/018/0006065210" target="_blank">전기·보험료 등 50만원 지원…‘소상공인 부담경감 크레딧’ 개시</a>
+             </dd>
+            <!-- 사회파트 -->
+             <dt>사회</dt>
+             <dd>
+              <a href="https://n.news.naver.com/mnews/article/022/0004051277" target="_blank">선사시대 삶 새긴 ‘걸작’… “6000년 암각화 전통 독보적 증거”</a>
+             </dd>
+             <dd>
+              <a href="https://n.news.naver.com/mnews/article/079/0004044617" target="_blank">"민생회복 소비쿠폰 차질없이 지급하자"…민관 업무협약</a>
+             </dd>
+            <!-- TV/연예파트 -->
+             <dt>TV/연예</dt>
+             <dd>
+              <a href="https://m.entertain.naver.com/home/article/108/0003347156" target="_blank">김준호♥김지민, 하객 1200명에 안심 스테이크+갈비탕 대접 [스타이슈]</a>
+             </dd>
+             <dd>
+              <a href="https://m.entertain.naver.com/home/article/311/0001891113" target="_blank">'이병헌♥' 이민정, 아들과 '26억' 美저택 관리하더니…할리우드 만끽 [★해시태그]</a>
+             </dd>
+          </dl>
+       </article>
+
+
+       <!-- 
+        [ 용어정의 리스트 : dl > dt + dd ] 
+        dl : 용어리스트
+        (defines the description list)
+        dt : 용어
+        (defines the term)
+        dd : 용어설명
+        (description each term)
+        ___________________________
+
+        주의 - dl은 반드시 자식요소로 dt와 dd가
+        한번이상 사용되야 함!!!
+        또 주의 - dt와 dd는 형제관계임!(부모자식아님!)
+       -->
+
+
+
     </main>
 
     <!--*********** 3. 하단영역 ***********-->
