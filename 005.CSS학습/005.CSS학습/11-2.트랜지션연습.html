@@ -40,6 +40,22 @@
         #bart-box img{
             width: 150px;
         }
+
+        /* 라벨 디자인 - 버튼형 */
+        .btn-action{
+            padding: 20px;
+            border: 1px solid gray;
+            border-radius: 10px;
+            background-color: #ccc;
+        }
+        /* 가상요소로 버튼 글씨 넣기 */
+        .btn-action::before{
+            content: '동작시작!';
+            font-size: 35px;
+        }
+
+        /* 체크박스 체크시 버튼형 라벨 변경하기 */
+        #chkbx:
     </style>
 </head>
 <body>
@@ -49,8 +65,10 @@
          #car{
             position: absolute;
             <!-- 자동차 처음에 나가있음 -->
-             
-            
+             <!-- 체크박스 -->
+              <input type="checkbox" id="chkbx">
+             <!-- 라벨 -->
+              <label for="chkbx"> class="btn-action"></label>
          }
         <!-- 자동차이미지 -->
          <img src="./images/car.png" alt="자동차" id="car">
