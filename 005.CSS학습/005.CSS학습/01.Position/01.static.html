@@ -17,6 +17,14 @@
 
         /* 첫번째 박스에 포지션 체크 */
         #s1{
+            position: static;
+            /* static은 안써도 static임! */
+            top: 100px;
+            left: 100px;
+            /* static은 위치이동속성 적용안됨! */
+            margin-top: 100px;
+            margin-left: 100px;
+            /* static은 마진으로 위치이동함! */
             
             /* 
                 [ CSS 포지션이 뭐지? ]
@@ -49,6 +57,21 @@
         #s3{
             background-color: lightblue;
         }
+
+        /* 제목넣기 : 렐러티브로! */
+      h1.tit {
+        position: relative;
+        left: 30%;
+        width: 40%;
+        text-align: center;
+        margin: 0;
+        padding: 20px;
+        border: 4px solid darkorange;
+        border-radius: 20px;
+        background-color: lightsalmon;
+        box-shadow: 5px 5px 5px #0000006b;
+        font-size: 45px;
+      }
 
     </style>
 </head>
