@@ -180,4 +180,27 @@ a.my-cha-link {
   background-color: rgba(255 255 255 / 0.8);
 }
 /* 왼쪽박스 */
+
 /* 오른쪽박스 */
+
+/* 링크박스 a요소 */
+.link-box a{
+  font-size: 24px;
+  line-height: 37px;
+}
+/* 가상요소로 애니메이션 밑줄만들기 */
+.link-box a::before{
+  content: '';
+  display: block;
+  width: 100%;
+  height: 2px;
+  background-color: red;
+  /* 트랜지션 trs */
+  transition: 0.3s linear;
+}
+
+/* a에 오버시 가상요소 밑줄 글씨만큼 늘어나기! */
+.link-box a:hover::after{
+  width: 100%;
+  
+}
