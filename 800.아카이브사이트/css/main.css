@@ -7,54 +7,177 @@
 @import url(./core.css);
 
 /* 전체 배경 */
-body{
-    background-color: #000;
+body {
+  background-color: #000;
 }
 
-/* 1. 상단영역 */
+/**************** 1. 상단영역 ****************/
 /* 겉박스 */
-#top-area{
-    background-color: #fff;
+#top-area {
+  background-color: #fff;
 }
 /* 속박스 */
-.top-area .part-box{
-    /* padding-top: 19px; */
-    /* 상단영역 높이값 동일셋팅! */
-    height: 112px;
+.top-area .part-box {
+  /* padding-top: 19px; */
+  /* 상단영역 높이값 동일셋팅! */
+  height: 112px;
 }
 /* 로고이미지 */
-.logo{
-    width: 100%;
-    margin-top: 19px;
-} 
+.logo {
+  width: 100%;
+  margin-top: 19px;
+}
 
 /* GNB메뉴 */
 
 /* float해제설정 */
-#gnb{
-    max-width: 699px;
-    margin: 0 auto;
-    /* outline: 1px solid red; */
+#gnb {
+  max-width: 699px;
+  margin: 0 auto;
+  /* outline: 1px solid red; */
 }
-#gnb::after{
-    content: '';
-    display: block;
-    clear: both;
+#gnb::after {
+  content: "";
+  display: block;
+  clear: both;
 }
-#gnb li{
-    float: left;
-    /* 높이값 만큼 줄간격셋팅 */
-    line-height: 112px;
+#gnb li {
+  float: left;
+  /* 높이값 만큼 줄간격셋팅 */
+  line-height: 112px;
 }
 /* 두번째 li부터 끝까지 왼쪽마진 */
-#gnb li+li{
-    margin-left: 18.8%;
-    /* 마진의 %값의 기준은
+#gnb li + li {
+  margin-left: 18.8%;
+  /* 마진의 %값의 기준은
     부모박스의 크기이다! */
 }
 /* 깃허브 박스 */
-.git-box{
-    text-align: right;
-    font-size: 47px;
-    line-height: 112px;
+.git-box {
+  text-align: right;
+  font-size: 47px;
+  line-height: 112px;
 }
+
+/* 나의 캐릭터 링크 박스 */
+a.my-cha-link {
+  /* a요소는 위아래 마진 적용안되므로
+  인라인블록으로 display 변경함! */
+  display: inline-block;
+  margin-top: 22px;
+  /* 인라인요소간 진행방향 세로정렬
+  -> 옆에 있는 깃허브로고가 영향을 받으므로
+  이 정렬속성으로 세로위치를 조정함! */
+  vertical-align: -22px;
+}
+/* 처음에 마지막째 이미지는 안보이게함 */
+.my-cha-link img:last-child{
+  display: none;
+}
+/* 마우스 오버시 첫번째 이미지 안보이게함 */
+.my-cha-link:hover img:first-child{
+  display: none;
+}
+/* 마우스 오버시 마지막째 이미지 보이게함 */
+.my-cha-link:hover img:last-child{
+  display: inline;
+}
+
+/**************** 2. 메인영역 ****************/
+.main-area {
+  /* 글자색 모두 흰색 */
+  color: #fff;
+}
+
+/* 2-1. 자기소개 박스 */
+/* 자기소개 겉박스 */
+#intro-box {
+  /* 가로폭 끝까지 그라데이션 나오게 겉박스에 셋팅함! */
+  background-image: linear-gradient(
+    to bottom,
+    #d1d7fe 0%,
+    #333f8c 19%,
+    #000 40%
+  );
+}
+/* 자기소개 속박스 */
+.intro-box {
+  /* 위아래 패딩 */
+  padding: 79px 0;
+}
+/* 자기소개글 타이틀 */
+.intro-box .txt-box h2 {
+  font-size: 48px;
+  font-weight: normal;
+  margin-bottom: 60px;
+}
+/* 자기소개글 내용 박스 */
+.intro-box .txt-box p {
+  font-size: 20px;
+  line-height: 34px;
+}
+/* 자기소개 이미지박스 */
+.img-box {
+  height: 487px;
+  border-radius: 40px;
+  /* 모퉁이 부분 이미지 숨김 */
+  overflow: hidden;
+}
+.img-box img {
+  width: 100%;
+  height: 100%;
+  /* 이미지를 마치 배경처럼 박스에
+    비율 맞춰서 빈틈없이 보이게 하기! */
+  object-fit: cover;
+}
+
+/********** 2-2. 트레이닝 프로젝트 파트 **********/
+/* 공통 PJ박스 직계 속박스 div */
+.pj-box > div {
+  padding-top: 18px;
+}
+/********** 2-2-1.제목박스 **********/
+.sub-part-title{
+  /* 박스설정 */
+  padding-bottom: 28px;
+  text-align: center;
+
+  /* 글자설정 */
+  font-size: 36px;
+}
+
+/* 구분선은 타이틀박스의 가상요소로 구현함 */
+.sub-part-title::before{
+  content: '';
+  display: block;
+  /* 하단마진28px
+  margin: 위 양쪽 아래 */
+  margin: 0 auto 28px;
+
+  max-width: 865px;
+  height: 1px;
+  background-color: #ccc;
+}
+
+/********** 2-2-2.링크박스 **********/
+.link-box{
+  /* 가로크기는 레이아웃은 아니지만
+  12그리드 크기를 기준해서 준다! */
+  width: calc(100%/12*10);
+  /* 마영오! - 블록요소 가로중앙 */
+  margin: 0 auto;
+  /* 둥근모서리 20 : bdrs20 */
+  border-radius: 20px;
+  /* 배경색 흰색 반투명(80%)
+  rgba형식에서 a는 알파값으로 투명도이며 0.8이면
+  80%를 의미함!
+    예전형식:
+    rgba(숫자,숫자,숫자,알파값)
+    새로운형식:
+    rgba(숫자 숫자 숫자 / 알파값)
+  */
+  /* background-color: rgba(255, 255, 255, 0.8); */
+  background-color: rgba(255 255 255 / 0.8);
+}
+/* 왼쪽박스 */
+/* 오른쪽박스 */
