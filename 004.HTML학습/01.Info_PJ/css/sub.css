@@ -423,7 +423,7 @@ dd타입중에 첫번째 선택하기
 }
 /* td 비율 설정 */
 /* 첫번째 td */
-.photo-news td:nth-child(1) {  
+.photo-news td:nth-child(1) {
   /* 가로10%에 조금진한 회색배경 글자중앙 글자두껍게 */
   width: 10%;
   text-align: center;
@@ -438,7 +438,7 @@ dd타입중에 첫번째 선택하기
   padding: 0 20px;
 }
 /* 세번째 td */
-.photo-news td:nth-child(3) {  
+.photo-news td:nth-child(3) {
   /* 가로30%에 옅은회색배경 패딩 5px */
   width: 30%;
   padding: 5px;
@@ -479,6 +479,24 @@ dd타입중에 첫번째 선택하기
   /* 이미지 비율 강제 설정속성
   aspect-ratio 값을 2/1 가로:세로 가 2:1임 */
   aspect-ratio: 4/3;
+}
+
+/* 포토뉴스 제목 디자인 재정의! */
+.photo-news h3 {
+  /* 배경색제거 글자중앙 최대가로 제거 */
+  background: transparent;
+  text-align: center;
+  max-width: none;
+}
+/* 가상요소 앞에 넣기 */
+.photo-news h3::before {
+  content: "📸";
+  margin-right: 10px;
+}
+/* 가상요소 뒤에 넣기 */
+.photo-news h3::after {
+  content: "📺";
+  margin-left: 10px;
 }
 
 /* 오늘의 작품&느낌 */

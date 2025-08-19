@@ -96,7 +96,6 @@
         background: url(./images/ab5.jpg) no-repeat center/cover;
       }
 
-      
       /* 두번째 픽스드 박스 */
       #f2 {
         position: fixed;
@@ -122,7 +121,6 @@
         left: 0;
         width: 100%;
         z-index: 9999;
-
 
         text-align: center;
         margin: 0;
@@ -171,7 +169,7 @@
         position: absolute;
         width: 100px;
         height: 50px;
-        color: #664d4d;
+        color: #fff;
         background: url(./images/car.png) no-repeat center/contain;
       }
 
@@ -191,48 +189,84 @@
         border: 10px dotted darkblue;
       }
 
-      /* span 을 앱솔루트로 만들경우! */
-      .spabs {
-        /* 포지션 앱솔루트 poa */
-        position: absolute;
-        bottom: 0;
+      /* span 을 픽스드로 만들경우! */
+      .span-fixed {
+        /* 포지션 픽스드 pof */
+        position: fixed;
+        bottom: 35%;
         right: 0;
-        /* 나의 부모는? .s8 */
+        /* 나의 부모는? 보이는화면(빛이나오는화면) */
+        z-index: 1;
+
+        font-size: 40px;
+        font-weight: bold;
+        color: #fff;
+        padding: 20px;
+        background-color: magenta;
 
         /* 아웃라인 ol */
-        outline: 4px dotted rgb(129, 5, 129);
+        outline: 4px dotted darkmagenta;
       }
 
-      /* 앱솔루트 판타롱스타킹~~!
-      -> 앱솔루트 박스에 width,height를 주지 않아도
-      내용물 만큼 자동으로 크기가 생성된다! */
+      /* 포스터 미리보기 : 픽스드 포지션 이용!!! */
       .poster-fixed {
         position: fixed;
         top: 20%;
-        right: 10%;
-        /* 부모는? 보이는화면! */
+        right: 0;
+        /* 부모는? 픽스드 보이는화면! */
+
+        /* 오른쪽에 박스를 붙여놓고 translate로
+        내크기만큼 오른쪽방향(x축)으로 이동! */
+        translate: 100%;
+
+        /* 맨위로! */
+        z-index: 9999999;
 
         /* 보더 */
         border: 10px ridge goldenrod;
+
+        /* 트랜지션 trs */
+        transition: 0.4s ease-out;
       }
+
+      /* 포스터박스 오버시 translate로 보이기 */
+      .poster-fixed:hover {
+        translate: 0;
+      }
+
       /* 포스터보기 타이틀 */
-      .poster-fixed h3{
+      .poster-fixed h3 {
         /* 앱솔루트 포지션 */
         position: absolute;
         /* 위치값 사용시 부모는? .poster-fixed */
-        top: 0;
-        right: 100%;
-        
+        /* 보더크기는 앱솔루트에서 제외되므로 보더크기만큼 -10px */
+        top: -10px;
+        /* 오른쪽기준선으로부터 밀기
+        부모박스 보더제외한 내부크기100% + 한쪽보더10px */
+        right: calc(100% + 10px);
+
         /* 기본마진 없앰 */
         margin: 0;
         /* color: white; */
-        test-align: center;
-        
+        /* 글자중앙정렬은 글자 wrighting-mode에서 진행되는
+        글자방향의 중앙을 뜻함! */
+        text-align: center;
+        /* 높이값 = 부모100% + 위아래보더값20px */
+        height: calc(100% + 20px);
+        /* 글자배치 세로방향 &  진행방향left -> right */
+        writing-mode: vertical-lr;
+        letter-spacing: 30px;
+        font-size: 24px;
+        color: lightgreen;
+        text-shadow: 2px 2px 2px #00000070;
+        padding: 0 10px;
+        background-color: goldenrod;
+        border-radius: 10px 0 0 10px;
       }
 
       /* 이미지가 박스에 단독으로 들어갈 경우
       하단에 생기는 공백 없애기 */
-      .a5 img {
+      .poster-fixed img {
         vertical-align: middle;
         /* 인라인요소가 세로정렬 속성인 vertical-align의
         값을 top/middle/bottom 중 어떤값을 사용해도
@@ -245,7 +279,7 @@
         width: 300px;
         height: 400px;
         /* 보더액자 */
-        border: 50px ridge rgb(192, 192, 192);
+        border: 50px ridge silver;
       }
       /* 이미지가 앱솔루트! */
       .absolute-images img {
@@ -262,13 +296,13 @@
         /* 트랜지션 trs */
         transition: 0.3s;
       }
-      /* 싸고있는 박스에 마우스 오버시 투명도1 */      
+      /* 싸고있는 박스에 마우스 오버시 투명도1 */
       .absolute-images:hover img:last-child {
         opacity: 1;
       }
 
       /* 앱솔루트 위치값으로 크기만들기 */
-      .car-box{
+      .car-box {
         position: absolute;
         /* 맨위 왼쪽에 위치 */
         top: 0;
@@ -284,14 +318,14 @@
       }
 
       /* 자동차 이미지 */
-      .car-box img{
+      .car-box img {
         width: 100%;
         /* 이미지는 한쪽 크기만 주면
         나머지 방향크기는 자동비율유지함! */
       }
 
       /* 자동차 앱솔루트 타이틀박스 */
-      .car-box h3{
+      .car-box h3 {
         position: absolute;
         /* 위치값으로 부모가로크기를 채우게함!
         동적크기 생성! */
@@ -330,9 +364,9 @@
 
     <!-- 픽스드로 포스터 미리보기 -->
     <div class="poster-fixed" title="픽스드로 포스터 미리보기">
-      <img src="./images/ab0.jpg" alt="포스터" />\
-      <!-- 포스터미리보기 타이틀 박스 -->
-       <h3>포스터보기</h3>
+      <img src="./images/ab0.jpg" alt="포스터" />
+      <!-- 포스터보기 타이틀 박스 -->
+      <h3>포스터보기</h3>
     </div>
 
     <!-- 앱솔루트끼리는 서로 겹친다! -->
@@ -342,11 +376,11 @@
     </div>
 
     <!-- 앱솔루트 위치값으로 크기만들기 -->
-     <div class="car-box">
-      <img src="./images/car.png" alt="자동차">
+    <div class="car-box">
+      <img src="./images/car.png" alt="자동차" />
       <!-- 위치값으로 크기만들 타이틀박스 -->
-       <h3>😎레드 스포츠카!!!🚗</h3>
-     </div>
+      <h3>😎레드 스포츠카!!!🚗</h3>
+    </div>
 
     <!-- 부모를 찾는 앱솔루트! -->
     <div class="bx2 s5">
@@ -362,7 +396,7 @@
 
             <div class="abs a4" title="나는 부모찾아 올라간다!">a4</div>
 
-            <span class="spabs" title="자동블록전환!">
+            <span class="span-fixed" title="자동블록전환!">
               나는 span 픽스드다!
             </span>
           </div>
