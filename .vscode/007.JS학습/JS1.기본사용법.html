@@ -62,7 +62,24 @@
     // 클래스는 여러개일 수 있으므로 0부터 시작!
     .item(0)
     // CSS배경 변경하기
+    // STYLE 객체안에 각종 css속성이 모두 만들어져있음!
     .style.background = 'url(./images/kimbs.jpg) no-repeat top/cover';
+
+    // 2-2. 글자색 변경하기
+    document.getElementsByClassName('pbox')
+    .item(0).style.color = 'white';
+
+    // 2-3. 글자그림자 넣기
+    document.getlementsByClassName('pbox')
+    .item(0).style.textShadow = '1px 1px 1px red';
+
+    // 2-4. 박스 둥글게 만들기
+    document.getElementsByClassName('pbox')
+    .item(0).style.borderRadius = '50%';
+
+    // 2-5. 트랜지션 넣기
+    document.getElementsByClassName('pbox')
+    .item(0).style.transition = '2s';
 
   } //////////// 김비서나와라 함수 ////////////
   ////////////////////////////////////////////
