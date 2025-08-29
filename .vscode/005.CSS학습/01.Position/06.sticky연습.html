@@ -18,15 +18,19 @@
             /* 스티키 박스 */
             position: sticky;
             top: 0;
+
             text-align: center;
             margin-top: 300px;
         }
         /* 박스 이미지 엔터간극 없애기 */
         .bx img{
             vertical-align: middle;
+
+            /* 이미지크기고정 */
+            width: 601px;
             height: 105px;
         }
-        
+
         /* 스티키 top값 개별지정하기 */
         .bx:nth-child(2){
             top: 105px;
@@ -46,7 +50,7 @@
         .bx:nth-child(7){
             top: calc(105px*6);
         }
-
+       
         /************************************ 
             [ CSS 계산 내장함수 : calc() ]
             1. 사칙연산을 수행함

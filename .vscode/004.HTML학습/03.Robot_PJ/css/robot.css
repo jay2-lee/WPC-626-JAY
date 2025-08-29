@@ -16,8 +16,9 @@ body * {
     outline: 2px dashed #ccc;
 }
 
-/********* 1. 상단영역 ********/
-/********* 2. 메인영역 ********/
+/************* 1. 상단영역 *************/
+
+/************* 2. 메인영역 *************/
 .main-area{
     padding-top: 150px;
 }
@@ -26,7 +27,7 @@ body * {
 /* 로봇머리 */
 .robot-head{
     position: relative;
-    /* 부모자격 -  자식앱솔루트의 부모! */
+    /* 부모자격 - 자식앱솔루트의 부모! */
     width: 250px;
     height: 250px;
     /* 무대중앙에 마.영.오! */
@@ -40,6 +41,7 @@ body * {
 /* 눈공통 */
 .eye{
     top: 50px;
+    width: 50px;
     height: 50px;
     border-radius: 50%;
     border: 4px double #000;
@@ -51,15 +53,33 @@ body * {
 
 /* 왼눈 */
 .eye1{
-    left: 0;
-    background: url(../images/e1.jpg)
-    no-repeat 0/100% 100%;
+    left: 50px;
+    background-image: url(../images/e1.jpg);
 }
 /* 오른눈 */
 .eye2{
     right: 50px;
-    background: url(../images/e2.jpg)
-    no-repeat 0/100% 100%;
+    background-image: url(../images/e2.jpg);
 }
 
-/********* 4. 하단영역 ********/
+/* 코 */
+.nose{
+    top: 10px;
+    left: 10px;
+    width: 70px;
+    height: 120px;
+    background: url(../images/nose.jpg)
+    no-repeat -3px / 121% 110%;
+}
+
+/* 입 */
+.mouth{
+    top: 98px;
+    left: 102px;
+    width: 46px;
+    height: 67px;
+    border-radius: 20px;
+    background: url(../images/mouth.png) no-repeat center/cover;
+}
+
+/************* 4. 하단영역 *************/
