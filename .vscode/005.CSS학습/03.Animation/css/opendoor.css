@@ -1,0 +1,87 @@
+@charset "utf-8";
+/* Open Door CSS - opendoor.css */
+
+/* 웹폰트 */
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap");
+/* font-family: 'Comfortaa', cursive; */
+
+/* 초기화 */
+html,body,h1{
+    margin: 0;
+    padding: 0;
+}
+
+/* 공사중 표시 */
+body * {
+    outline: 2px dashed red;
+} */
+
+body{
+    height: 100vh;
+    overflow: hidden;
+    background-color: #9c0;
+}
+
+/* 타이틀 */
+.tit{
+    font-family: 'Comfortaa';
+    font-size: 42px;
+    margin: 20px auto;
+    text-align: center;
+    text-shadow: 2px 2px 2px #0000004b;
+    color: #fff;
+}
+/* 전체문부모 */
+.cont{
+    width: 400px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: #900;
+}
+/* 문프레임 */
+.frame{
+    position: relative;
+    top: 18px;
+    width: 350px;
+    height: 580px;
+    margin: 0 auto;
+    background: url(../images/seashore.jpg) no-repeat center/auto 100%;
+}
+/* 문짝 */
+.door{
+    position: relative;
+    /* 부모자격 - 문고리 */
+    with: 350px;
+    height: 580px;
+    background-color: #c90;
+    
+    /* 축변경 : 왼쪽 */
+    transform-origin: left;
+    /* 축변경 : 왼쪽 */
+    rotate: y 39deg;
+}
+/* 문고리 */
+.handle{
+    position: absolute;
+    top: 50%;
+    /* y축중앙이동 */
+    translate: 0 -50%;
+    right: 10px;
+    /* 부모는? .door */
+    width: 50px;
+    height: 50px;
+    background-color: blue;
+    border-radius: 50%;
+}
+{
+/* 애니메이션 플레이상태 설정하여 멈추기
+   animation-play-state: 
+   (1) 재생 상태값 : running
+   (2) 멈춤 상태값 : paused
+*/
+animation-play-state: paused;
+}
+/* 문의 최상위 부모에 마우스 오버시 애니메이션 재생하기 */
+.cont:hover .door{
+    animation-play-state: ;
+}
