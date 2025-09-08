@@ -38,6 +38,8 @@ body {
 
   /* 회전적용 : x축 10도, y축 30도 */
   transform: rotateX(10deg) rotateY(30deg);
+
+  /* outline: 1px solid red; */
 }
 /* 아이폰 각면 공통 */
 .iphone span {
@@ -49,16 +51,24 @@ body {
   background-repeat: no-repeat;
   background-size: 100% 100%;
   /* 배경 투명부분을 흰색으로 채움 */
-  /* background-color: #fff; */
+  background-color: #fff;
 }
 
 /* 1. 앞면 */
 .iphone span:nth-child(1) {
-  /* background-image: url(../images/ip01.png); */
+  background-image: url(../images/ip01.png);
+
+  /* z축으로 10px 앞으로 이동하기 */
+  translate: 0 0 10px;
 }
 /* 2. 뒷면 */
 .iphone span:nth-child(2) {
-  /* background-image: url(../images/ip02.png); */
+  background-image: url(../images/ip02.png);
+
+  /* z축으로 10px 뒤로 이동하기 */
+  translate: 0 0 -10px;
+  /* 뒷면에서 바로 보여야하므로 y축 180도회전 */
+  rotate: y 180deg;
 }
 /* 3. 오른쪽면 */
 .iphone span:nth-child(3) {
@@ -66,6 +76,11 @@ body {
 
   /* 가로크기 재설정 */
   width: 20px;
+
+  /* 오른쪽 끝으로 위치이동 */
+  right: -10px;
+  /* y축 90도 회전 */
+  rotate: y 90deg;
 }
 /* 4. 왼쪽면 */
 .iphone span:nth-child(4) {
@@ -73,6 +88,11 @@ body {
 
   /* 가로크기 재설정 */
   width: 20px;
+
+  /* 왼쪽 끝으로 위치이동 */
+  left: -10px;
+  /* y축 -90도 회전 */
+  rotate: y -90deg;
 }
 /* 5. 아랫면 */
 .iphone span:nth-child(5) {
@@ -80,6 +100,11 @@ body {
 
   /* 세로크기 재설정 */
   height: 20px;
+
+  /* 아래쪽 끝으로 위치이동 */
+  bottom: -10px;
+  /* x축 90도 회전 */
+  rotate: x 90deg;
 }
 
 /* 6. 아랫면 */
@@ -88,6 +113,11 @@ body {
 
   /* 세로크기 재설정 */
   height: 20px;
+  
+  /* 윗쪽 끝으로 위치이동 */
+  top: -10px;
+  /* x축 90도 회전 */
+  rotate: x 90deg;
 }
 
 /* 아이폰 애니 클래스 */
@@ -98,13 +128,7 @@ body {
 
 /* 아이폰 회전 애니 키프레임 */
 @keyframes iphone-ani {
-  to {
+  to{
     transform: rotateX(-350deg) rotateY(390deg);
-  }
-  from {
-    transform: rotateX(10deg) rotateY(30deg);
-  }
-  to {
-    transform: rotateX(10deg) rotateY(330deg);
   }
 }
