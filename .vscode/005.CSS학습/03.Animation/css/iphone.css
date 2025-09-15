@@ -132,3 +132,103 @@ body {
     transform: rotateX(-350deg) rotateY(390deg);
   }
 }
+
+/* 흘러가는 글자 박스 */
+.flow-box{
+ /* 박스 포지션 */
+  position: fixed;
+  top: 2vh;
+
+}
+/* 글자박스 */
+.text-box{
+
+  /* 플렉스박스 : ul과 ul도 옆으로 흐르게함 */
+  display: flex;
+
+  /* 보이는 화면만큼 가로폭 */
+  width: 100vw;
+
+  /* 애니메이션 호출 : 이시이지반방마 */
+  animation: flow-ani 5s linear infinite reverse;
+  /* 애니메이션을 반대방향으로 보내려면 reverse! */
+  /* animation: flow-ani 5s linear infinite reverse; */
+}
+
+/* 두번째 박스 */
+.flow-box.box2{
+  /* 위치를 하단으로 이동 */
+  top: auto;
+  bottom: 2vh;
+} 
+/* 두번째 박스의 글자박스 */
+.box2 .text-box{
+  /* 대방향으로 보내려면 reverse!
+  animation-direction 속성만 덮어쓴다! */
+  animation-direction: reverse;
+} 
+
+  /* 대방향으로 보내려면 reverse!
+  animation-direction 속성만 덮어쓴다! */
+  animation-direction: reverse;
+}
+
+/* 글자박스 ul */
+.text-box ul{
+  /* 플렉스박스 */
+  display: flex;
+  /* 부모박스채우기
+  -> flex-shrink 값을 0이여야만 적용됨!!! */
+  width: 100vw;
+  /* 부모에 맞춰서 줄어드는 flex자식속성인
+  flex-shrink 기본값이 1이므로 내가 원하는
+  크기를 설정하려면 이 속성값을 0으로 해야
+  자동으로 줄어드는 속성을 없앨 수 있다! */
+  flex-shrink: 0;
+
+  /* 초기화 */
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+/* 글자박스 ul li */
+.text-box ul li{
+  /* 가로크기 4등분 */
+  /* width: calc(100vw/4); */
+
+  /* 가로크기 계산보다 flex:1 셋팅이
+  더 플렉스스러운 셋팅임! */
+  flex:1;
+  text-align: center;
+  font-family: 'Antion', sans-serif;
+  font-size: 4vw;
+/* outline: 2px dashed red; */
+
+  /* 글자에 그라데이션 넣기 */
+background-image:
+linear-gradient(to right, darkorange, darkgreen);
+/* (2) 배경 클리핑 값 text로 설정 */
+background-clip: text;
+/* (3) 글자색 투명으로 설정 */
+color: transparent;
+/* 아래와 같이 글자색 투명 설정해도 유효함 */
+/* -webkit-text-fill-color: transparent; */
+
+/* 글자그림자를 text-shadow로 넣으면
+그라데이션 색 넣기 글자이므로 그림자가
+앞으로보임(이유는 글자색이 투명해서!)
+그래서 filter속성의 drop-shadow를
+사용하면 된다! filter효과는 요소 전체에 
+종합적인 효과를 주는 속성이다! */
+filter: drop-shadow()
+color: transparent;
+
+}
+
+/* 글자이동 애니메이션 키프레임 */
+@keyframes flow-ani {
+ to{
+  /* x축으로 내크기의 절반만큼 왼쪽으로 이동함! */
+  translate: -50%
+    }
+}
