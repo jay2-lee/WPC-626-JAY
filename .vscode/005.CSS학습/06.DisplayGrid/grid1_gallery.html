@@ -258,6 +258,23 @@
        개수를 4,3,2,1로 변경하는 미디어쿼리를 작성해)
     */
 
+    /* 그리드 영역 조정하기 */
+    .first {
+      grid-area: 1 / 1 / 3 / 3;
+    }
+    .second {
+    grid-area: 8 / 2 / 10 / 4;
+    }
+
+    /* 1200px 이하 사이즈 미디어쿼리 시작 */
+    @media (max-width: 1200px) {
+      .grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  
+    /* 500px 이하 사이즈 미디어쿼리 끝 */
+
     /* 1200px 이하 사이즈 미디어쿼리 시작 */
     @media (max-width: 1200px) {
       .grid {
@@ -279,6 +296,10 @@
       .grid {
         grid-template-columns: repeat(2, 1fr);
       }
+      /* 그리드 영역 조정하기 */
+     .second {
+    grid-area: 8 / 1 / 10 / 3;
+    }
     }
     /* 800px 이하 사이즈 미디어쿼리 끝 */
 
@@ -290,6 +311,10 @@
       /* 상품명,가격 글자크기 변경 */
       .grid > div aside {
         font-size: 4vw;
+      }
+      /* 그리드 영역 조정하기 - 초기화! */
+      .first, .second {
+        grid-area: auto;
       }
     }
     /* 500px 이하 사이즈 미디어쿼리 끝 */
@@ -313,7 +338,7 @@
      + : 형제요소
      -->
     <div class="grid">
-      <div>
+      <div class="first">
         <img src="./images/1.jpg" alt="dress">
         <aside>
           <h2>상품명1</h2>
@@ -537,7 +562,7 @@
           <h3>상품가격32</h3>
         </aside>
       </div>
-      <div>
+      <div class="second">
         <img src="./images/33.jpg" alt="dress">
         <aside>
           <h2>상품명33</h2>
