@@ -135,8 +135,10 @@ body {
 
 }
 
-/* 영화정보박스 li:hover */
-.poster-menu-box li:hover .movie-info{
+/* 영화정보박스 li:hover
++ li.on일때도 적용! */
+.poster-menu-box li:hover .movie-info,
+.poster-menu-box li.on .movie-info{
   top: 0;
 }
 
