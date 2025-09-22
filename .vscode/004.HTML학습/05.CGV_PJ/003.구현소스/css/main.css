@@ -93,7 +93,9 @@ body {
     /* 트랜지션 */
     transition: rotate .3s ease-out;
 }
-/* li에 오버시 변경 */
+/* li에 오버시 변경
++ 동시에 클래스 on일때 적용 */
+.poster-menu-box li.on,
 .poster-menu-box li:hover{
   /* 일어남! */
   rotate: x 0deg;
