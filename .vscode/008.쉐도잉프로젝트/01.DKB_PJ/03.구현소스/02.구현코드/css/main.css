@@ -576,6 +576,10 @@ h1.logo::before {
   padding-top: 10px;
 }
 
+/* 미리보기 컨텐츠 리스트 ul */
+.preview-area ul.cont-box {
+  gap: 1.5%;
+}
 /***************** 2-4. 미리보기영역 *****************/
 .view-part {
   height: 660px;
